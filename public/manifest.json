@@ -1,0 +1,17 @@
+{
+    "name": "Submission 3",
+    "short_name": "Submission 3",
+    "description": "Aplikasi PWA Submission 3",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#00897B",
+    "theme_color": "#00897B",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "gcm_sender_id": "140361509168"
+}
