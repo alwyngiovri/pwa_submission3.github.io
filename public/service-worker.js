@@ -19,13 +19,28 @@ workbox.precaching.precacheAndRoute([
     { url: '/js/idx.js', revision: '1' },
     { url: '/js/club.js', revision: '1' },
     { url: '/manifest.json', revision: '1' },
-    { url: '/icon.png', revision: '1' },
+    { url: '/icon_512.png', revision: '1' },
+    { url: '/icon_192.png', revision: '1' },
 ]);
 
 workbox.routing.registerRoute(
   new RegExp('/pages/'),
     workbox.strategies.staleWhileRevalidate({
         cacheName: 'pages'
+    })
+);
+
+workbox.routing.registerRoute(     
+    new RegExp('/'),
+    workbox.strategies.staleWhileRevalidate({
+      cacheName: 'public'
+    })
+);
+
+workbox.routing.registerRoute(     
+    new RegExp('https://api.football-data.org/v2'),
+    workbox.strategies.staleWhileRevalidate({
+      cacheName: 'endpoint'
     })
 );
 
